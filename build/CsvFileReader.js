@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CsvFileReader = void 0;
 var fs_1 = __importDefault(require("fs"));
+var utils_1 = require("./utils");
 var CsvFileReader = /** @class */ (function () {
     function CsvFileReader(filename) {
         this.filename = filename;
@@ -15,8 +16,22 @@ var CsvFileReader = /** @class */ (function () {
             .split('\n')
             .map(function (row) {
             return row.split(',');
+        }) // below changing into appropriate type of Value
+            .map(function (row) {
+            return [
+                utils_1.dateStringToDate(row[0]),
+                row[1],
+                row[2],
+                parseInt(row[3]),
+                parseInt(row[4]),
+                row[5],
+                row[6]
+            ];
         });
     };
     return CsvFileReader;
 }());
 exports.CsvFileReader = CsvFileReader;
+// 10/08/2018, Manutd , Leichester, '2', '1',  H, A Marriner
+// 0             1         2         3     4   
+// row 5 as MatchResult, we developer override scripts default bahavoour. Instead of 

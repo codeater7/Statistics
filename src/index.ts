@@ -1,15 +1,14 @@
 import { CsvFileReader}  from './CsvFileReader'
+import { dateStringToDate} from './utils'
+import {MatchResult} from './MatchResult'
 
 const reader = new CsvFileReader('football.csv')
 reader.read();
+console.log( reader.data[0])
 
 
-// Enem- enumeration => object that stores closely related values
-enum MatchResult {
-    HomeWin=  'H',
-    AwayWin= "A",
-    Draw= 'D'
-}
+
+
 
 let manUtdWins = 0;
 for ( let match of reader.data ){
