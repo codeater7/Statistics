@@ -5,18 +5,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CsvFileReader = void 0;
 var fs_1 = __importDefault(require("fs"));
-// defining the tuple as the new type 
 var CsvFileReader = /** @class */ (function () {
     function CsvFileReader(filename) {
         this.filename = filename;
         this.data = [];
     }
+    // Marking abstract indicates that it's going to be implemented by our child.
     CsvFileReader.prototype.read = function () {
         this.data = fs_1.default.readFileSync(this.filename, { encoding: 'utf-8' })
             .split('\n')
             .map(function (row) {
             return row.split(',');
-        }); // below changing into appropriate type of Value
+        }) // below changing into appropriate type of Value
+            .map(this.mapRow);
     };
     return CsvFileReader;
 }());
