@@ -1,12 +1,12 @@
 
 import {MatchResult} from './MatchResult'
-import { MatchReader } from './MatchReader';
-
-const reader = new MatchReader('football.csv')
-reader.read();
-console.log( reader.data[0])
+import {CsvFileReader} from './CsvFileReader'
+import {MatchReader} from './MatchReader';
 
 
+
+// Create an object that satisfies the 'DataReader' interface
+//Create an instace of MatchReader and pass in something satisfying the 'DataReade' interface
 
 
 
