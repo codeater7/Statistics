@@ -1,11 +1,7 @@
 import fs from 'fs'
 
-// defining the tuple as the new type 
-
-
-
-
 export class CsvFileReader {
+    //data chai yesto hunxa vanera declare garako mathi... 
     data: string [][] = [];
 
     constructor (public filename: string){}

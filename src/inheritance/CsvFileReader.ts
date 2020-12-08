@@ -1,9 +1,6 @@
 import fs from 'fs'
 
 
-
-
-
 export abstract class CsvFileReader<T> {
     data: T [] = [];
 

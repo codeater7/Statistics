@@ -31,14 +31,4 @@ export  class Summary{
 
     }
 }
-// Our class summary doesn't have much much behavior to it. It has references to other objects,
-// Whenever we send a command or call a method on summary, summary is not responsible for doing anythng
 
-// Instead it is going to attempt to use these different objects that it has references 
-//Great thing about it ism we can really swap out the analyzer or the output target and get different outputs
-// of information or genereate different kind of reports.
-
-
-// summary main vayee ni compostion ma arko ma var parxa... tala ko different class ho,
-// But sap var parxa; yeslai nai compostion vanako hola
-//new Summary (new WinsAnalysis(), new ConsoleReport());
